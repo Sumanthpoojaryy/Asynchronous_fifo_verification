@@ -15,7 +15,7 @@ class async_fifo_write_driver extends uvm_driver#(async_fifo_write_sequence_item
   endfunction: build_phase
 
   task run_phase(uvm_phase phase);
-    repeat(3)@(win.write_drv_cb);
+   // repeat(3)@(win.write_drv_cb);
     forever begin
       seq_item_port.get_next_item(req);
       w_drive();
@@ -24,11 +24,12 @@ class async_fifo_write_driver extends uvm_driver#(async_fifo_write_sequence_item
   endtask: run_phase
 
   task w_drive();
+    repeat(1)@(win.write_drv_cb);  
     $display("-----------------------------write driver driving @%0t-------------------------",$time);
       win.winc <= req.winc;
       win.wdata <= req.wdata;
      req.print();
-    repeat(2)@(win.write_drv_cb);
+   // repeat(2)@(win.write_drv_cb);
   endtask: w_drive
 
 endclass

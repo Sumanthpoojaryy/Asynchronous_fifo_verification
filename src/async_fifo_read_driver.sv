@@ -15,7 +15,7 @@ class async_fifo_read_driver extends uvm_driver#(async_fifo_read_sequence_item);
   endfunction: build_phase
 
   task run_phase(uvm_phase phase);
-    repeat(3)@(rin.read_drv_cb);
+   // repeat(3)@(rin.read_drv_cb);
     forever begin
       seq_item_port.get_next_item(req);
       r_drive();
@@ -24,11 +24,12 @@ class async_fifo_read_driver extends uvm_driver#(async_fifo_read_sequence_item);
   endtask: run_phase
 
   task r_drive();
+    repeat(1)@(rin.read_drv_cb);  
     $display("-----------------------------read driver driving @%0t-------------------------",$time);
       rin.rinc <= req.rinc;
       req.print();
-    repeat(2)@(rin.read_drv_cb);
-  endtask: r_drive
+   // repeat(2)@(rin.read_drv_cb);
+   endtask: r_drive
 
 endclass
 

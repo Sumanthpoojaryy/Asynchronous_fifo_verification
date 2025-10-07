@@ -19,7 +19,7 @@ class async_fifo_write_monitor extends uvm_monitor;
 
   task run_phase(uvm_phase phase);
     req = async_fifo_write_sequence_item::type_id::create("req");
-    repeat(4)@(win.write_mon_cb);
+//    repeat(4)@(win.write_mon_cb);
     forever begin
       repeat(1)@(win.write_mon_cb);
       req.winc = win.winc;
@@ -27,7 +27,7 @@ class async_fifo_write_monitor extends uvm_monitor;
       req.wfull = win.wfull;
       write_monitor_port.write(req);
       req.print();
-      repeat(1)@(win.write_mon_cb);
+  //    repeat(1)@(win.write_mon_cb);
     end
   endtask
 endclass

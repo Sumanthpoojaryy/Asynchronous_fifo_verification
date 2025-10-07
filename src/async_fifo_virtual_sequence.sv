@@ -32,10 +32,10 @@ class async_fifo_virtual_sequence extends uvm_sequence;
 
     fork
         write_sequence.start(p_sequencer.write_sequencer);
-     //   read_sequence.start(p_sequencer.read_sequencer);
+        read_sequence.start(p_sequencer.read_sequencer);
     join
     
-   /* fork
+    fork
       begin
         write_sequence2.start(p_sequencer.write_sequencer);
         read_sequence2.start(p_sequencer.read_sequencer);
@@ -47,7 +47,7 @@ class async_fifo_virtual_sequence extends uvm_sequence;
         write_sequence3.start(p_sequencer.write_sequencer);
         read_sequence3.start(p_sequencer.read_sequencer);
       end
-    join*/
+    join
     
   endtask: body
 

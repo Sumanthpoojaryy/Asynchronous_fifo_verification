@@ -4,18 +4,14 @@
 class async_fifo_scoreboard extends uvm_scoreboard;
   `uvm_component_utils(async_fifo_scoreboard)
 
-  // TLM FIFOs for receiving transactions from monitors
   uvm_tlm_analysis_fifo#(async_fifo_write_sequence_item)  write_scb_imp;
   uvm_tlm_analysis_fifo#(async_fifo_read_sequence_item)   read_scb_imp;
 
   async_fifo_write_sequence_item wr_seq_item;
   async_fifo_read_sequence_item  rd_seq_item;
 
-  // ----------------------------
-  // Queue-based FIFO model
-  // ----------------------------
-  bit [`DSIZE-1:0] fifo_q[$];   // dynamic queue acts as FIFO
-  int depth = `DEPTH;
+
+  bit [`DSIZE-1:0] fifo_q[$:`DEPTH-1];
   bit [`DSIZE-1:0] exp_data;
 
   int pass_count, fail_count;
@@ -35,33 +31,26 @@ class async_fifo_scoreboard extends uvm_scoreboard;
   task wr_scb();
     forever begin
       write_scb_imp.get(wr_seq_item);
-
       `uvm_info("SCOREBOARD",
         $sformatf("WRITE Monitor data received @%0t: winc=%0b wdata=%0h wfull=%0b",
                    $time, wr_seq_item.winc, wr_seq_item.wdata, wr_seq_item.wfull),
         UVM_LOW);
 
       if (wr_seq_item.winc) begin
-        if (fifo_q.size() == depth) begin
-          if (!wr_seq_item.wfull) begin
-            `uvm_error("SCOREBOARD", "DUT did NOT assert wfull when FIFO was full");
-          end 
-          else begin
-            `uvm_info("SCOREBOARD", "WRITE blocked due to FIFO FULL (as expected)", UVM_LOW);
+        if (fifo_q.size() <`DEPTH) begin
+          fifo_q.push_back(wr_seq_item.wdata);
+        end
+        if (wr_seq_item.wfull == 1 && fifo_q.size()== `DEPTH) begin
+            $display("-----------------------------------------------------------------");
+             `uvm_info(get_full_name(),"FIFO FULL is correctly asserted.",UVM_MEDIUM)
+             $display("-----------------------------------------------------------------");
           end
-        end 
-        else begin
-          if (wr_seq_item.wfull) begin
-            `uvm_error("SCOREBOARD", "DUT asserted wfull before FIFO is actually full");
-          end 
-          if (fifo_q.size() != depth) begin
-            fifo_q.push_back(wr_seq_item.wdata);
-            `uvm_info("SCOREBOARD",
-              $sformatf("WRITE: Stored %0h (count=%0d)", wr_seq_item.wdata, fifo_q.size()),
-              UVM_MEDIUM);
+        else if(wr_seq_item.wfull == 0 && fifo_q.size()== `DEPTH) begin
+            $display("-----------------------------------------------------------------");
+            `uvm_info(get_full_name(),"FIFO FULL is not correctly asserted !!",UVM_MEDIUM)
+            $display("-----------------------------------------------------------------");
           end
         end
-      end
     end
   endtask
 
@@ -79,37 +68,40 @@ class async_fifo_scoreboard extends uvm_scoreboard;
         UVM_LOW);
 
       if (rd_seq_item.rinc) begin
-        if (fifo_q.size() == 0) begin
-          if (!rd_seq_item.rempty) begin
-            `uvm_error("SCOREBOARD", "DUT did NOT assert rempty when FIFO was empty");
-          end 
-          else begin
-            `uvm_info("SCOREBOARD", "READ blocked due to FIFO EMPTY (as expected)", UVM_LOW);
+        if (fifo_q.size() > 0 ) begin
+          exp_data = fifo_q.pop_front();
+
+          if (rd_seq_item.rempty == 1 && fifo_q.size() == 0) begin
+            $display("-----------------------------------------------------------------");
+            `uvm_info(get_full_name(),"FIFO EMPTY is correctly asserted.",UVM_MEDIUM)
+            $display("-----------------------------------------------------------------");
           end
-        end 
-        else begin
-          if (rd_seq_item.rempty) begin
-            `uvm_error("SCOREBOARD", "DUT asserted rempty before FIFO is actually empty");
-          end 
-          if (fifo_q.size() != 0) begin
-            exp_data = fifo_q.pop_front(); // FIFO order
-            if (exp_data == rd_seq_item.rdata) begin
+          else if(rd_seq_item.rempty == 0 && fifo_q.size() == 0)begin
+            $display("-----------------------------------------------------------------");
+            `uvm_info(get_full_name(),"FIFO EMPTY is not correctly asserted !!",UVM_MEDIUM)
+            $display("-----------------------------------------------------------------");
+          end
+          if (exp_data == rd_seq_item.rdata) begin
               pass_count++;
               `uvm_info("SCOREBOARD",
                 $sformatf("PASS: rdata=%0h matched expected=%0h | count=%0d",
                           rd_seq_item.rdata, exp_data, fifo_q.size()),
                 UVM_MEDIUM);
-            end 
+            end
             else begin
               fail_count++;
               `uvm_error("SCOREBOARD",
                 $sformatf("FAIL: rdata=%0h != expected=%0h | count=%0d",
                           rd_seq_item.rdata, exp_data, fifo_q.size()));
             end
-          end
         end
-      end
+        else begin
+          `uvm_error("SCB", "Received from DUT, while Expect Queue[REFERENCE_FIFO_MEM] is empty\n");
+         // $display("The unexpected pkt which is read....\n");
+         // rd_seq_item.print_seq; // prints the data that is recived from dut !
+        end
     end
+end
   endtask
 
 

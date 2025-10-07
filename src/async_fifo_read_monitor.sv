@@ -19,7 +19,7 @@ class async_fifo_read_monitor extends uvm_monitor;
 
   task run_phase(uvm_phase phase);
     req = async_fifo_read_sequence_item::type_id::create("req");
-    repeat(4)@(rin.read_mon_cb);
+   // repeat(4)@(rin.read_mon_cb);
     forever begin
       repeat(1)@(rin.read_mon_cb);
       req.rinc = rin.rinc;
@@ -27,7 +27,7 @@ class async_fifo_read_monitor extends uvm_monitor;
       req.rempty = rin.rempty;
       req.print();
       read_monitor_port.write(req);
-      repeat(1)@(rin.read_mon_cb);
+     // repeat(1)@(rin.read_mon_cb);
     end
   endtask
 endclass
