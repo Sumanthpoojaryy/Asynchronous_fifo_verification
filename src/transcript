@@ -1,0 +1,562 @@
+# vsim -c top 
+# Start time: 12:29:04 on Oct 07,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# //  Questa Sim
+# //  Version 10.6c linux Jul 25 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.write_interface(fast)
+# Loading work.read_interface(fast)
+# Loading mtiUvm.uvm_pkg
+# Loading work.async_fifo_pkg(fast)
+# Loading work.top(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading /tools/mentor/questasim_10.6c/questasim/uvm-1.1d/linux/uvm_dpi.so
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test async_fifo_test...
+# ** Info: rrst_check FAILED: rempty != 1 or rdata != 0 when rrst = 0
+#    Time: 10 ns Started: 10 ns  Scope: top.rd_intf File: async_fifo_read_interface.sv Line: 35
+# -----------------------------write driver driving @25-------------------------
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1096
+#   wdata  integral                        8     'hdd 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_subscriber.sv(41) @ 45: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[WRITE] WDATA=dd, WINC=1 WFULL=0
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1059
+#   wdata  integral                        8     'hdd 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0  
+# ----------------------------------------------------
+# UVM_INFO async_fifo_scoreboard.sv(42) @ 45: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE Monitor data received @45: winc=1 wdata=dd wfull=0
+# UVM_INFO async_fifo_scoreboard.sv(61) @ 45: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE: Stored dd (count=1)
+# -----------------------------write driver driving @45-------------------------
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1172
+#   wdata  integral                        8     'hd3 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_subscriber.sv(41) @ 65: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[WRITE] WDATA=d3, WINC=1 WFULL=0
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1059
+#   wdata  integral                        8     'hd3 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0  
+# ----------------------------------------------------
+# UVM_INFO async_fifo_scoreboard.sv(42) @ 65: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE Monitor data received @65: winc=1 wdata=d3 wfull=0
+# UVM_INFO async_fifo_scoreboard.sv(61) @ 65: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE: Stored d3 (count=2)
+# -----------------------------write driver driving @65-------------------------
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1176
+#   wdata  integral                        8     'hef 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_subscriber.sv(41) @ 85: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[WRITE] WDATA=ef, WINC=1 WFULL=0
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1059
+#   wdata  integral                        8     'hef 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0  
+# ----------------------------------------------------
+# UVM_INFO async_fifo_scoreboard.sv(42) @ 85: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE Monitor data received @85: winc=1 wdata=ef wfull=0
+# UVM_INFO async_fifo_scoreboard.sv(61) @ 85: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE: Stored ef (count=3)
+# -----------------------------write driver driving @85-------------------------
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1180
+#   wdata  integral                        8     'h12 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# ----------------------------------------------------
+# Name      Type                           Size  Value
+# ----------------------------------------------------
+# req       async_fifo_read_sequence_item  -     @1067
+#   rinc    integral                       1     'h0X 
+#   rdata   integral                       8     'hdd 
+#   rempty  integral                       1     'h0  
+# ----------------------------------------------------
+# UVM_INFO async_fifo_subscriber.sv(48) @ 90: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[READ]RDATA=dd , RINC=x,REMPTY=0
+# UVM_INFO async_fifo_scoreboard.sv(79) @ 90: uvm_test_top.environment.scoreboard [SCOREBOARD] READ Monitor data received @90: rinc=x rdata=dd rempty=0
+# UVM_INFO async_fifo_subscriber.sv(41) @ 105: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[WRITE] WDATA=12, WINC=1 WFULL=0
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1059
+#   wdata  integral                        8     'h12 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0  
+# ----------------------------------------------------
+# UVM_INFO async_fifo_scoreboard.sv(42) @ 105: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE Monitor data received @105: winc=1 wdata=12 wfull=0
+# UVM_INFO async_fifo_scoreboard.sv(61) @ 105: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE: Stored 12 (count=4)
+# -----------------------------write driver driving @105-------------------------
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1184
+#   wdata  integral                        8     'he3 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_subscriber.sv(41) @ 125: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[WRITE] WDATA=e3, WINC=1 WFULL=0
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1059
+#   wdata  integral                        8     'he3 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0  
+# ----------------------------------------------------
+# UVM_INFO async_fifo_scoreboard.sv(42) @ 125: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE Monitor data received @125: winc=1 wdata=e3 wfull=0
+# UVM_INFO async_fifo_scoreboard.sv(61) @ 125: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE: Stored e3 (count=5)
+# -----------------------------write driver driving @125-------------------------
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1188
+#   wdata  integral                        8     'hf3 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# ----------------------------------------------------
+# Name      Type                           Size  Value
+# ----------------------------------------------------
+# req       async_fifo_read_sequence_item  -     @1067
+#   rinc    integral                       1     'h0X 
+#   rdata   integral                       8     'h0xx
+#   rempty  integral                       1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_subscriber.sv(48) @ 130: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[READ]RDATA=x , RINC=x,REMPTY=x
+# UVM_INFO async_fifo_scoreboard.sv(79) @ 130: uvm_test_top.environment.scoreboard [SCOREBOARD] READ Monitor data received @130: rinc=x rdata=x rempty=x
+# UVM_INFO async_fifo_subscriber.sv(41) @ 145: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[WRITE] WDATA=f3, WINC=1 WFULL=x
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1059
+#   wdata  integral                        8     'hf3 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_scoreboard.sv(42) @ 145: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE Monitor data received @145: winc=1 wdata=f3 wfull=x
+# UVM_INFO async_fifo_scoreboard.sv(61) @ 145: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE: Stored f3 (count=6)
+# -----------------------------write driver driving @145-------------------------
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1192
+#   wdata  integral                        8     'hb1 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_subscriber.sv(41) @ 165: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[WRITE] WDATA=b1, WINC=1 WFULL=x
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1059
+#   wdata  integral                        8     'hb1 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_scoreboard.sv(42) @ 165: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE Monitor data received @165: winc=1 wdata=b1 wfull=x
+# UVM_INFO async_fifo_scoreboard.sv(61) @ 165: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE: Stored b1 (count=7)
+# -----------------------------write driver driving @165-------------------------
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1196
+#   wdata  integral                        8     'h6  
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# ----------------------------------------------------
+# Name      Type                           Size  Value
+# ----------------------------------------------------
+# req       async_fifo_read_sequence_item  -     @1067
+#   rinc    integral                       1     'h0X 
+#   rdata   integral                       8     'h0xx
+#   rempty  integral                       1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_subscriber.sv(48) @ 170: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[READ]RDATA=x , RINC=x,REMPTY=x
+# UVM_INFO async_fifo_scoreboard.sv(79) @ 170: uvm_test_top.environment.scoreboard [SCOREBOARD] READ Monitor data received @170: rinc=x rdata=x rempty=x
+# UVM_INFO async_fifo_subscriber.sv(41) @ 185: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[WRITE] WDATA=6, WINC=1 WFULL=x
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1059
+#   wdata  integral                        8     'h6  
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_scoreboard.sv(42) @ 185: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE Monitor data received @185: winc=1 wdata=6 wfull=x
+# UVM_INFO async_fifo_scoreboard.sv(61) @ 185: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE: Stored 6 (count=8)
+# -----------------------------write driver driving @185-------------------------
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1200
+#   wdata  integral                        8     'h4  
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_subscriber.sv(41) @ 205: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[WRITE] WDATA=4, WINC=1 WFULL=x
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1059
+#   wdata  integral                        8     'h4  
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_scoreboard.sv(42) @ 205: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE Monitor data received @205: winc=1 wdata=4 wfull=x
+# UVM_INFO async_fifo_scoreboard.sv(61) @ 205: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE: Stored 4 (count=9)
+# -----------------------------write driver driving @205-------------------------
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1204
+#   wdata  integral                        8     'hbe 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# ----------------------------------------------------
+# Name      Type                           Size  Value
+# ----------------------------------------------------
+# req       async_fifo_read_sequence_item  -     @1067
+#   rinc    integral                       1     'h0X 
+#   rdata   integral                       8     'h0xx
+#   rempty  integral                       1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_subscriber.sv(48) @ 210: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[READ]RDATA=x , RINC=x,REMPTY=x
+# UVM_INFO async_fifo_scoreboard.sv(79) @ 210: uvm_test_top.environment.scoreboard [SCOREBOARD] READ Monitor data received @210: rinc=x rdata=x rempty=x
+# UVM_INFO async_fifo_subscriber.sv(41) @ 225: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[WRITE] WDATA=be, WINC=1 WFULL=x
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1059
+#   wdata  integral                        8     'hbe 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_scoreboard.sv(42) @ 225: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE Monitor data received @225: winc=1 wdata=be wfull=x
+# UVM_INFO async_fifo_scoreboard.sv(61) @ 225: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE: Stored be (count=10)
+# -----------------------------write driver driving @225-------------------------
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1208
+#   wdata  integral                        8     'hb9 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_subscriber.sv(41) @ 245: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[WRITE] WDATA=b9, WINC=1 WFULL=x
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1059
+#   wdata  integral                        8     'hb9 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_scoreboard.sv(42) @ 245: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE Monitor data received @245: winc=1 wdata=b9 wfull=x
+# UVM_INFO async_fifo_scoreboard.sv(61) @ 245: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE: Stored b9 (count=11)
+# -----------------------------write driver driving @245-------------------------
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1212
+#   wdata  integral                        8     'h71 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# ----------------------------------------------------
+# Name      Type                           Size  Value
+# ----------------------------------------------------
+# req       async_fifo_read_sequence_item  -     @1067
+#   rinc    integral                       1     'h0X 
+#   rdata   integral                       8     'h0xx
+#   rempty  integral                       1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_subscriber.sv(48) @ 250: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[READ]RDATA=x , RINC=x,REMPTY=x
+# UVM_INFO async_fifo_scoreboard.sv(79) @ 250: uvm_test_top.environment.scoreboard [SCOREBOARD] READ Monitor data received @250: rinc=x rdata=x rempty=x
+# UVM_INFO async_fifo_subscriber.sv(41) @ 265: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[WRITE] WDATA=71, WINC=1 WFULL=x
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1059
+#   wdata  integral                        8     'h71 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_scoreboard.sv(42) @ 265: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE Monitor data received @265: winc=1 wdata=71 wfull=x
+# UVM_INFO async_fifo_scoreboard.sv(61) @ 265: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE: Stored 71 (count=12)
+# -----------------------------write driver driving @265-------------------------
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1216
+#   wdata  integral                        8     'hd9 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_subscriber.sv(41) @ 285: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[WRITE] WDATA=d9, WINC=1 WFULL=x
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1059
+#   wdata  integral                        8     'hd9 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_scoreboard.sv(42) @ 285: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE Monitor data received @285: winc=1 wdata=d9 wfull=x
+# UVM_INFO async_fifo_scoreboard.sv(61) @ 285: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE: Stored d9 (count=13)
+# -----------------------------write driver driving @285-------------------------
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1220
+#   wdata  integral                        8     'hdf 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# ----------------------------------------------------
+# Name      Type                           Size  Value
+# ----------------------------------------------------
+# req       async_fifo_read_sequence_item  -     @1067
+#   rinc    integral                       1     'h0X 
+#   rdata   integral                       8     'h0xx
+#   rempty  integral                       1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_subscriber.sv(48) @ 290: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[READ]RDATA=x , RINC=x,REMPTY=x
+# UVM_INFO async_fifo_scoreboard.sv(79) @ 290: uvm_test_top.environment.scoreboard [SCOREBOARD] READ Monitor data received @290: rinc=x rdata=x rempty=x
+# UVM_INFO async_fifo_subscriber.sv(41) @ 305: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[WRITE] WDATA=df, WINC=1 WFULL=x
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1059
+#   wdata  integral                        8     'hdf 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_scoreboard.sv(42) @ 305: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE Monitor data received @305: winc=1 wdata=df wfull=x
+# UVM_INFO async_fifo_scoreboard.sv(61) @ 305: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE: Stored df (count=14)
+# -----------------------------write driver driving @305-------------------------
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1224
+#   wdata  integral                        8     'h8c 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_subscriber.sv(41) @ 325: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[WRITE] WDATA=8c, WINC=1 WFULL=x
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1059
+#   wdata  integral                        8     'h8c 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_scoreboard.sv(42) @ 325: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE Monitor data received @325: winc=1 wdata=8c wfull=x
+# UVM_INFO async_fifo_scoreboard.sv(61) @ 325: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE: Stored 8c (count=15)
+# -----------------------------write driver driving @325-------------------------
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1228
+#   wdata  integral                        8     'h2c 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# ----------------------------------------------------
+# Name      Type                           Size  Value
+# ----------------------------------------------------
+# req       async_fifo_read_sequence_item  -     @1067
+#   rinc    integral                       1     'h0X 
+#   rdata   integral                       8     'h0xx
+#   rempty  integral                       1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_subscriber.sv(48) @ 330: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[READ]RDATA=x , RINC=x,REMPTY=x
+# UVM_INFO async_fifo_scoreboard.sv(79) @ 330: uvm_test_top.environment.scoreboard [SCOREBOARD] READ Monitor data received @330: rinc=x rdata=x rempty=x
+# UVM_INFO async_fifo_subscriber.sv(41) @ 345: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[WRITE] WDATA=2c, WINC=1 WFULL=x
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1059
+#   wdata  integral                        8     'h2c 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_scoreboard.sv(42) @ 345: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE Monitor data received @345: winc=1 wdata=2c wfull=x
+# UVM_INFO async_fifo_scoreboard.sv(61) @ 345: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE: Stored 2c (count=16)
+# -----------------------------write driver driving @345-------------------------
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1232
+#   wdata  integral                        8     'hc  
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_subscriber.sv(41) @ 365: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[WRITE] WDATA=c, WINC=1 WFULL=x
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1059
+#   wdata  integral                        8     'hc  
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_scoreboard.sv(42) @ 365: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE Monitor data received @365: winc=1 wdata=c wfull=x
+# UVM_INFO async_fifo_scoreboard.sv(50) @ 365: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE blocked due to FIFO FULL (as expected)
+# -----------------------------write driver driving @365-------------------------
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1236
+#   wdata  integral                        8     'hee 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# ----------------------------------------------------
+# Name      Type                           Size  Value
+# ----------------------------------------------------
+# req       async_fifo_read_sequence_item  -     @1067
+#   rinc    integral                       1     'h0X 
+#   rdata   integral                       8     'h0xx
+#   rempty  integral                       1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_subscriber.sv(48) @ 370: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[READ]RDATA=x , RINC=x,REMPTY=x
+# UVM_INFO async_fifo_scoreboard.sv(79) @ 370: uvm_test_top.environment.scoreboard [SCOREBOARD] READ Monitor data received @370: rinc=x rdata=x rempty=x
+# UVM_INFO async_fifo_subscriber.sv(41) @ 385: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[WRITE] WDATA=ee, WINC=1 WFULL=x
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1059
+#   wdata  integral                        8     'hee 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_scoreboard.sv(42) @ 385: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE Monitor data received @385: winc=1 wdata=ee wfull=x
+# UVM_INFO async_fifo_scoreboard.sv(50) @ 385: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE blocked due to FIFO FULL (as expected)
+# -----------------------------write driver driving @385-------------------------
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1240
+#   wdata  integral                        8     'h43 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_subscriber.sv(41) @ 405: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[WRITE] WDATA=43, WINC=1 WFULL=x
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1059
+#   wdata  integral                        8     'h43 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_scoreboard.sv(42) @ 405: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE Monitor data received @405: winc=1 wdata=43 wfull=x
+# UVM_INFO async_fifo_scoreboard.sv(50) @ 405: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE blocked due to FIFO FULL (as expected)
+# -----------------------------write driver driving @405-------------------------
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1244
+#   wdata  integral                        8     'h39 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# ----------------------------------------------------
+# Name      Type                           Size  Value
+# ----------------------------------------------------
+# req       async_fifo_read_sequence_item  -     @1067
+#   rinc    integral                       1     'h0X 
+#   rdata   integral                       8     'h0xx
+#   rempty  integral                       1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_subscriber.sv(48) @ 410: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[READ]RDATA=x , RINC=x,REMPTY=x
+# UVM_INFO async_fifo_scoreboard.sv(79) @ 410: uvm_test_top.environment.scoreboard [SCOREBOARD] READ Monitor data received @410: rinc=x rdata=x rempty=x
+# UVM_INFO async_fifo_subscriber.sv(41) @ 425: uvm_test_top.environment.subscriber [async_fifo_subscriber] COV[WRITE] WDATA=39, WINC=1 WFULL=x
+# ----------------------------------------------------
+# Name     Type                            Size  Value
+# ----------------------------------------------------
+# req      async_fifo_write_sequence_item  -     @1059
+#   wdata  integral                        8     'h39 
+#   winc   integral                        1     'h1  
+#   wfull  integral                        1     'h0X 
+# ----------------------------------------------------
+# UVM_INFO async_fifo_scoreboard.sv(42) @ 425: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE Monitor data received @425: winc=1 wdata=39 wfull=x
+# UVM_INFO async_fifo_scoreboard.sv(50) @ 425: uvm_test_top.environment.scoreboard [SCOREBOARD] WRITE blocked due to FIFO FULL (as expected)
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 425: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO async_fifo_scoreboard.sv(135) @ 425: uvm_test_top.environment.scoreboard [SCOREBOARD] Final Results: PASS=0 | FAIL=0
+# UVM_INFO async_fifo_subscriber.sv(60) @ 425: uvm_test_top.environment.subscriber [async_fifo_subscriber] [COVERAGE] monitor read coverage = 16.80%
+# UVM_INFO async_fifo_subscriber.sv(61) @ 425: uvm_test_top.environment.subscriber [async_fifo_subscriber] [COVERAGE] Monitor write coverage = 27.93%
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   85
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCOREBOARD]    50
+# [TEST_DONE]     1
+# [async_fifo_subscriber]    31
+# ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 425 ns  Iteration: 67  Instance: /top
+# End time: 12:29:09 on Oct 07,2025, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 0
